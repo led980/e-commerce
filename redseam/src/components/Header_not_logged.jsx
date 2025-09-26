@@ -3,12 +3,11 @@ import icon from "../assets/profileicon.svg"
 function HeaderUnlog(){
     return(
         <header className="header">
-            
             <p className="text"><img src={Logo} alt="logo" className="icon"></img> RedSeam Clothing</p>
-            <a className="text" href="">
+            <div>
                 <img src={icon} alt="profilepic" className="icon"/>
-                Log in
-            </a>
+                <a className="log" href="">Log in</a>
+            </div>
         </header>
     )
 }
