@@ -1,48 +1,78 @@
 import HeaderUnlog from "./components/Header_not_logged";
+import { useState } from "react";
 function Register(){
-    return (
-        <div>
-            <HeaderUnlog />
-  <div class="loginpage">
-    <div class="loginpic"></div>
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-    <div class="container">
-      <div class="loginform">
-        <h2 class="title">Registration</h2>
+  const togglePassword = () => {
+    setShowPassword((prev) => !prev);
+  };
 
-        <div class="profile-pic">
-          <img src="https://i.pravatar.cc/250" alt="Profile Picture" />
-          <div class="upload-links">
-            <a href="#">Upload new</a> | <a href="#">Remove</a>
-          </div>
-        </div>
+  const toggleConfirmPassword = () => {
+    setShowConfirmPassword((prev) => !prev);
+  };
+  return (
+    <div className="body.register">
+      <HeaderUnlog />
+      <div className="loginpage">
+        <div className="loginpic"></div>
 
-        <form>
-          <div class="field">
-            <input type="text" class="input" placeholder="Username *" required />
-          </div>
-          <div class="field">
-            <input type="email" class="input" placeholder="Email *" required />
-          </div>
-          <div class="field">
-            <input type="password" class="input" placeholder="Password *" required />
-            <button type="button" class="toggle">👁</button>
-          </div>
-          <div class="field">
-            <input type="password" class="input" placeholder="Confirm password *" required />
-            <button type="button" class="toggle">👁</button>
-          </div>
+        <div className="container">
+          <div className="loginform">
+            <h2 className="title">Registration</h2>
 
-          <button type="submit" class="field">Register</button>
-        </form>
+            <div className="profile-pic">
+              <img src="https://i.pravatar.cc/250" alt="Profile Picture" />
+              <div className="upload-links">
+                <a href="#">Upload new</a> | <a href="#">Remove</a>
+              </div>
+            </div>
 
-        <div class="bottom">
-          Already member? <a href="#">Log in</a>
+            <form>
+              <div className="field">
+                <input type="text" className="input" placeholder="Username *" required />
+              </div>
+              <div className="field">
+                <input type="email" className="input" placeholder="Email *" required />
+              </div>
+              <div className="field">
+                <input className="input" type={showPassword ? "text" : "password"}
+                  id="password"
+                  placeholder="Password *"
+                />
+                <button
+                  className="toggle"
+                  type="button"
+                  onClick={togglePassword}
+                >👁</button>
+              </div>
+              <div className="field">
+                <input
+                  className="input"
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="Confirm password *"
+                  required
+                />
+                <button
+                  type="button"
+                  className="toggle"
+                  onClick={toggleConfirmPassword}
+                  aria-label={showConfirmPassword ? "Hide confirm password" : "Show confirm password"}
+                >
+                  👁
+                </button>
+              </div>
+
+              <button type="submit" className="field">Register</button>
+            </form>
+
+            <div className="bottom">
+              Already member? <a href="#">Log in</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
         )
     }
 export default Register
