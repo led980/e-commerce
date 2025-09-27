@@ -1,6 +1,7 @@
-import Logo from "../assets/logo.svg"
-import cart from "../assets/shoppingcart.svg"
-import Arow from "../assets/arrow.svg"
+import Logo from "../../assets/logo.svg"
+import cart from "../../assets/shoppingcart.svg"
+import Arow from "../../assets/arrow.svg"
+import "./header.css"
 function HeaderLog(){
     return(
         <header className="header">

@@ -1,5 +1,6 @@
-import Logo from "../assets/logo.svg"
-import icon from "../assets/profileicon.svg"
+import Logo from "../../assets/logo.svg"
+import icon from "../../assets/profileicon.svg"
+import "./header.css"
 function HeaderUnlog(){
     return(
         <header className="header">

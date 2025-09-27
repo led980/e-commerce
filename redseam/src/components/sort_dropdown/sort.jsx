@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./sort.css";
 
 const SortDropdown = ({ onSortChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Close when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -20,7 +19,6 @@ const SortDropdown = ({ onSortChange }) => {
     onSortChange && onSortChange(value);
     setIsOpen(false);
   };
-
   return (
     <div className="sort-container" ref={dropdownRef}>
       <button className="sort-btn" onClick={() => setIsOpen(!isOpen)}>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import HeaderUnlog from "./components/Header_not_logged";
-
+import HeaderUnlog from "../components/headers/Header_not_logged";
+import "./logreg.css"
 function LogIn() {
     const [showPassword, setShowPassword] = useState(false);
 

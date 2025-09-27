@@ -1,10 +1,22 @@
-import { useState } from "react";
-import { SlidersHorizontal } from "lucide-react"; // icon library (lucide-react)
+import { useState, useRef, useEffect } from "react";
+import { SlidersHorizontal } from "lucide-react"; 
+import "./filter.css";
 
 const FilterDropdown = ({ onApply }) => {
   const [open, setOpen] = useState(false);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleApply = () => {
     onApply({ from, to });
@@ -12,14 +24,12 @@ const FilterDropdown = ({ onApply }) => {
   };
 
   return (
-    <div className="filter-container">
-      {/* Toggle button */}
+    <div className="filter-container" ref={dropdownRef}>
       <button className="filter-btn" onClick={() => setOpen(!open)}>
         <SlidersHorizontal size={18} />
         <span>Filter</span>
       </button>
 
-      {/* Dropdown content */}
       {open && (
         <div className="filter-dropdown">
           <h4>Select price</h4>

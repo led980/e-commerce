@@ -1,0 +1,48 @@
+/*header*/
+.header{
+  position: fixed;
+  vertical-align: middle;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  background: rgba(255, 60, 0, 0.9);
+  padding: 15px 20px;
+  z-index: 1000;
+}
+.header .icon{
+  gap: 4px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.log {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.avatar {
+  padding-left: 20px;
+  padding-right: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.header {
+  background-color: #ffff;
+  align-items: center;
+  position: sticky;
+  width: fixed;
+  height: fixed;
+  top: 0;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-right: 100px;
+  padding-bottom: 10px;
+  padding-left: 100px;
+  opacity: 1;
+}

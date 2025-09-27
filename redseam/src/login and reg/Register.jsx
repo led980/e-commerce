@@ -1,5 +1,6 @@
-import HeaderUnlog from "./components/Header_not_logged";
+import HeaderUnlog from "../components/headers/Header_not_logged";
 import { useState } from "react";
+import "./logreg.css"
 function Register(){
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
