@@ -1,0 +1,158 @@
+.checkout-container {
+  height: 90vh;
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  align-items: flex-start;
+}
+.error {
+  display: block;
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+}
+/* === Left Form === */
+.checkout-form {
+  flex: 2;
+  height: 100%;
+  background: #faf8f8;
+  padding: 24px;
+  border-radius: 10px;
+}
+.form{
+    justify-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.checkout-form h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.fieldset {
+  border: none;
+}
+
+.legend {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* === Right Summary === */
+.checkout-summary {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summary-items {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summary-item {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+.summary-item img {
+  width: 100px;
+  height: 134px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.summary-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.summary-meta {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.summary-qty {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.summary-qty button {
+  background: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.summary-price {
+  margin-left: auto;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #999;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+/* === Totals === */
+.summary-totals {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.summary-totals p {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.summary-total {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* === Pay Button === */
+.pay-btn {
+  margin-top: 16px;
+  padding: 14px;
+  width: 100%;
+  background: #ff3c00;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.pay-btn:hover {
+  background: #e13a00;
+}

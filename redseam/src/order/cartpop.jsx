@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./cartpop.css";
-import cart from "../../assets/shoppingcart.svg";
-import ShoppingCartBig from "../../assets/shoppingcartbig.png";
+import cart from "../assets/shoppingcart.svg"
+import ShoppingCartBig from "../assets/shoppingcartbig.png";
 
 const CartPopUp = ({ cartItems, onRemove, onUpdateQuantity }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -112,9 +112,11 @@ const CartPopUp = ({ cartItems, onRemove, onUpdateQuantity }) => {
                   </p>
                 </div>
 
-                {/* Checkout */}
-                <button className="checkout-btn">Go to checkout</button>
-              </>
+                  {/* Checkout */}
+                  <Link to="/checkout">
+                    <button className="checkout-btn">Go to checkout</button>
+                  </Link>
+                </>
             )}
           </div>
         </div>

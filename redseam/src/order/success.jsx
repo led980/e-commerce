@@ -1,5 +1,5 @@
 import "./order.css";
-
+import { Link } from "react-router-dom";
 const SuccessModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
@@ -35,9 +35,12 @@ const SuccessModal = ({ isOpen, onClose }) => {
         <p className="modal-subtitle">Your order is placed successfully!</p>
 
         {/* Button */}
+        
+        <Link to="/">
         <button onClick={onClose} className="modal-btn">
           Continue shopping
         </button>
+              </Link>
       </div>
     </div>
   );

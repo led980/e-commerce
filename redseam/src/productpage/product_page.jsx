@@ -24,7 +24,6 @@ function ProductPage({ onAddToCart }) {
         setLoading(false);
       });
   }, [id]);
-
   if (loading) return <p>Loading...</p>;
   if (!product) return <p>Product not found.</p>;
   //add to cart handler

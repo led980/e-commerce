@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.svg";
 import Arow from "../../assets/arrow.svg";
 import "./header.css";
-import CartPopUp from "../order/cartpop.jsx";
+import CartPopUp from "../../order/cartpop.jsx";
 
 function HeaderLog({ user, cartItems, onLogout, onRemove, onUpdateQuantity }) {
   const avatar = user?.profile_photo;

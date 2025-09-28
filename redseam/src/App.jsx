@@ -5,11 +5,17 @@ import HeaderUnLog from "./components/headers/Header_not_logged.jsx";
 import HeaderLog from "./components/headers/header_logged.jsx";
 import { BrowserRouter, Router, Route, Routes} from "react-router-dom"
 import ProductPage from "./productpage/product_page.jsx";
+import CheckoutPage from "./checkout/checkout.jsx";
 function App() {
     // ✅ Add to cart
     const [cartItems, setCartItems] = useState([]);
+    
+const handleClearCart = () => {
+  setCartItems([]); // ✅ empties cart
+};
   const handleAddToCart = (product) => {
     setCartItems((prev) => {
+      
       const existing = prev.find(
         (item) =>
           item.id === product.id &&
@@ -79,15 +85,20 @@ function App() {
       ) : (
         <HeaderUnLog />
       )}
-    <main>
+      <main>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<LogIn onLogin={handleLogin} />} />
           <Route path="/register" element={<Register />} />
           <Route
             path="/products/:id"
-            element={<ProductPage onAddToCart={handleAddToCart} />}
-          />
+            element={<ProductPage onAddToCart={handleAddToCart} />} />
+          <Route path="/checkout" element={<CheckoutPage
+            cartItems={cartItems}
+            onUpdateQuantity={handleUpdateQuantity}
+            onRemove={handleRemove}
+            onClearCart={handleClearCart} // 👈 added
+          />} />
         </Routes>
       </main>
     </BrowserRouter>
