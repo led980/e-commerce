@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
    plugins: [react()],
-  base: '/led980.github.io/', 
+  base: '/', 
   server: {
     proxy: {
       "/api": {
