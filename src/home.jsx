@@ -28,7 +28,8 @@ const handleSortChange = (order) => {
     const fetches = [];
     for (let page = 1; page <= 10; page++) {
       fetches.push(
-        fetch(`/api/products?page=${page}`)
+        // /api/products?page=${page
+        fetch(`https://api.redseam.redberryinternship.ge/api/products?page=${page}`)
           .then(res => res.json())
           .then(data => data.data)
       );

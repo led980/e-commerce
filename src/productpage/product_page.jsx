@@ -12,7 +12,7 @@ function ProductPage({ onAddToCart }) {
   const [quantity, setQuantity] = useState(1);
   // fetch product details
   useEffect(() => {
-    fetch(`/api/products/${id}`) // 👈 change to your API URL
+    fetch(`https://api.redseam.redberryinternship.ge/api/products/${id}`)// 👈 change to your API URL
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

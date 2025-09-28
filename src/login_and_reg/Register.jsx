@@ -30,7 +30,7 @@ function Register() {
     e.preventDefault(); // ✅ first line to stop native reload
 
     try {
-      const res = await fetch("/api/register", {
+      const res = await fetch("https://api.redseam.redberryinternship.ge/scalar#tag/authentication/post/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

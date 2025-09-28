@@ -15,7 +15,7 @@ function LogIn({ onLogin }) {
 
     try {
       const res = await fetch(
-        "/api/login",
+        "https://api.redseam.redberryinternship.ge/scalar#tag/authentication/post/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
