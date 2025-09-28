@@ -1,0 +1,152 @@
+.product-container {
+  display: flex;
+  justify-content: space-between; /* push left (images) & right (info) apart */
+  align-items: flex-start;
+  gap: 60px; /* little more breathing room */
+  padding: 40px 80px; /* more side padding like in pic */
+}
+.text{
+    font-size: 14px;
+    margin: 10px;
+    padding-left: 100px;
+    color: #555;
+}
+.product-images {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start; /* ✅ align thumbnails with top of main image */
+}
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start; /* ✅ keep them top-aligned */
+}
+.text2{
+    font-size: 16px;
+    color: #10151F;
+    font-weight: 400;
+}
+.thumbnail {
+  width: 121px;   /* smaller */
+  height: 163px; /* proportion closer to screenshot */
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s;
+}
+
+.thumbnail.active,
+.thumbnail:hover {
+  border: 2px solid #ff3c00;
+}
+
+.main-image img {
+  width: 450px;   /* make bigger */
+  height: auto;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+
+.product-info {
+  max-width: 400px;
+}
+
+.product-info h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0 20px;
+}
+
+.colors,
+.sizes,
+.quantity {
+  margin: 20px 0;
+}
+
+.color-options {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.color-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-circle:hover {
+  transform: scale(1.1);
+  border-color: #ff3c00;
+}
+
+.size-options {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.size-btn {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 50px; /* pill shape */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.size-btn:hover {
+  border-color: #ff3c00;
+  color: #ff3c00;
+}
+
+.quantity select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.add-to-cart {
+  margin-top: 25px;
+  padding: 14px;
+  font-size: 16px;
+  width: 100%;
+  background: #ff3c00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background: #e13a00;
+}
+
+.add-to-cart:hover {
+  background: #e13a00;
+}
+.details {
+  margin-top: 40px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.details h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
