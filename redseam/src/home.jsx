@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
+import "./index.css"
 import ProductCard from "./components/product_card.jsx";
 import FilterDropdown from "./components/filter/filter_dropdown.jsx";
-// import HeaderLog from "./components/headers/header_logged.jsx";
 import SortDropdown from "./components/sort_dropdown/sort.jsx";
-import HeaderUnLog from "./components/headers/Header_not_logged.jsx";
 import Pagination from "./components/pagination/pagination.jsx"
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -14,6 +13,7 @@ const Home = () => {
   // Handle price filtering
   const handleFilterApply = ({ from, to }) => {
     setPriceFilter({ from, to });
+    setCurrentPage(1);
   };
   // handle sort callback
 const handleSortChange = (order) => {
@@ -85,12 +85,11 @@ if (sortOrder === "low-to-high") {
   const paginatedProducts = filteredProducts.slice(startIdx, endIdx);
   return (
     <div>
-      <HeaderUnLog />
       <div className="products-header">
         <h1 className="products-title">Products</h1>
 
         <div className="products-actions">
-          <span className="results-text">Showing {startIdx}-{endIdx} of {filteredProducts.length} results</span>
+          <span className="results-text">Showing {startIdx}-{filteredProducts.length} of {filteredProducts.length} results</span>
           <FilterDropdown onApply={handleFilterApply} />
           <SortDropdown onSortChange={handleSortChange} />
         </div>

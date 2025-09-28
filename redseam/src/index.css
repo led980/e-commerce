@@ -10,9 +10,6 @@
   align-items: center;
   line-height: 1;
 }
-.body.register, .body.login {
-  overflow: hidden
-}
 a {
   text-decoration: none;
   color: inherit;

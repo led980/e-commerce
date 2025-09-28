@@ -1,4 +1,13 @@
-
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Poppins";
+  vertical-align: baseline;
+  align-items: center;
+  line-height: 1;
+}
 
 /*log in*/
 
@@ -7,12 +16,16 @@
 }
 
 .loginpic {
-  background-image: url(assets/logregpic.png);
+  margin: 0;
+  padding: 0;
+  height: 95vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-image: url(../assets/logregpic.png);
   background-repeat: no-repeat;
   background-size: cover;
   flex: 1;
   display: block;
-  min-height: 100vh;
   object-fit: contain;
 }
 .container {

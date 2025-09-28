@@ -1,5 +1,5 @@
-import HeaderUnlog from "../components/headers/Header_not_logged";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./logreg.css"
 function Register(){
   const [showPassword, setShowPassword] = useState(false);
@@ -14,7 +14,6 @@ function Register(){
   };
   return (
     <div className="body.register">
-      <HeaderUnlog />
       <div className="loginpage">
         <div className="loginpic"></div>
 
@@ -40,6 +39,7 @@ function Register(){
                 <input className="input" type={showPassword ? "text" : "password"}
                   id="password"
                   placeholder="Password *"
+                  required
                 />
                 <button
                   className="toggle"
@@ -68,7 +68,7 @@ function Register(){
             </form>
 
             <div className="bottom">
-              Already member? <a href="#">Log in</a>
+              Already member? <Link to="/login">Log in</Link>
             </div>
           </div>
         </div>
