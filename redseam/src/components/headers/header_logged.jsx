@@ -23,7 +23,7 @@ function HeaderLog({ user, cartItems, onLogout, onRemove, onUpdateQuantity }) {
           onRemove={onRemove}
           onUpdateQuantity={onUpdateQuantity}
         />
-        <img src={avatar} className="avatar" alt="" />
+        <img src={`https://i.pravatar.cc/250`} className="avatar" alt="" />
         <img className="arrow" src={Arow} alt="" onClick={onLogout} />
         <p className="arrow">logout</p>
       </div>

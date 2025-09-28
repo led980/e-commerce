@@ -8,8 +8,16 @@ import ProductPage from "./productpage/product_page.jsx";
 import CheckoutPage from "./checkout/checkout.jsx";
 function App() {
     // ✅ Add to cart
-    const [cartItems, setCartItems] = useState([]);
-    
+    const [cartItems, setCartItems] = useState(() => {
+  // restore from localStorage if exists
+  const saved = localStorage.getItem("cartItems");
+  return saved ? JSON.parse(saved) : [];
+});
+
+// whenever cart changes → save to localStorage
+useEffect(() => {
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}, [cartItems]);
 const handleClearCart = () => {
   setCartItems([]); // ✅ empties cart
 };
@@ -52,7 +60,7 @@ const handleClearCart = () => {
       )
     );
   };
-
+  
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
