@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./index.css"
+import { Link } from "react-router-dom";
 import ProductCard from "./components/product_card.jsx";
 import FilterDropdown from "./components/filter/filter_dropdown.jsx";
 import SortDropdown from "./components/sort_dropdown/sort.jsx";
@@ -27,7 +28,7 @@ const handleSortChange = (order) => {
     const fetches = [];
     for (let page = 1; page <= 10; page++) {
       fetches.push(
-        fetch(`https://api.redseam.redberryinternship.ge/api/products?page=${page}`)
+        fetch(`/api/products?page=${page}`)
           .then(res => res.json())
           .then(data => data.data)
       );
@@ -96,13 +97,14 @@ if (sortOrder === "low-to-high") {
       </div>
       <div className="products-grid">
         {paginatedProducts.map((product) => (
+          <Link key={product.id} to={`/products/${product.id}`}>
           <ProductCard
             key={product.id}
-            id={product.id}
             title={product.name}
             price={product.price}
             image={product.cover_image}
           />
+          </Link>
         ))}
       </div>
       <Pagination

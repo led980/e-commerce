@@ -54,3 +54,6 @@
   display: flex;
   align-items: center;
 }
+.arrow {
+  cursor: pointer;
+}
